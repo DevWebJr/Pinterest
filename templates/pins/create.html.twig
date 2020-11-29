@@ -10,9 +10,6 @@
     </article>
     <h1>Add a new Pin</h1>
     <article>
-        {{form_start(form)}}
-            {{form_widget(form)}}
-            <input type="submit" value="Add Pin">
-        {{form_end(form)}}
+        {{ include('pins/_form.html.twig' }}
     </article>
 {% endblock %}
