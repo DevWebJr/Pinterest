@@ -14,7 +14,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class PinsController extends AbstractController
 {
     /**
-     * @Route("/", name="home", methods="GET")
+     * @Route("/", name="home", methods={"GET"})
      */
     public function index(): Response
     {
@@ -22,7 +22,7 @@ class PinsController extends AbstractController
     }
 
     /**
-     * @Route("/pins", name="all_pins", methods="GET")
+     * @Route("/pins", name="all_pins", methods={"GET"})
      */
     public function showAll(PinRepository $pinRepository): Response
     {
@@ -31,7 +31,7 @@ class PinsController extends AbstractController
     }
 
     /**
-     * @Route("/pins/{id<[0-9]+>}", name="show_pin", methods="GET")
+     * @Route("/pins/{id<[0-9]+>}", name="show_pin", methods={"GET"})
      */
     public function show(Pin $pin): Response
     {
@@ -40,7 +40,7 @@ class PinsController extends AbstractController
     }
 
     /**
-     * @Route("/pins/create", name="create_pin", methods="GET|POST")
+     * @Route("/pins/create", name="create_pin", methods={"GET|POST"})
      */
     public function create(Request $request, EntityManagerInterface $em): Response
     {
@@ -64,7 +64,7 @@ class PinsController extends AbstractController
     }
 
     /**
-     * @Route("/pins/{id<[0-9]+>}/edit", name="edit_pin", methods="GET|PUT")
+     * @Route("/pins/{id<[0-9]+>}/edit", name="edit_pin", methods={"GET|PUT"})
      */
     public function edit(Pin $pin,Request $request, EntityManagerInterface $em): Response
     {
@@ -91,19 +91,17 @@ class PinsController extends AbstractController
     }
 
     /**
-     * @Route("/pins/{id<[0-9]+>}/delete", name="delete_pin", methods="GET|DELETE")
+     * @Route("/pins/{id<[0-9]+>}/delete", name="delete_pin", methods={"DELETE"})
      */
-    public function delete(Pin $pin, EntityManagerInterface $em, Request $request): Response
+    public function delete(Request $request, Pin $pin, EntityManagerInterface $em): Response
     {
-        if ($this->isCsrfTokenValid('pin_deletion'.$pin->getId(), $request->request->get('csrf_token')))
+        if ($this->isCsrfTokenValid('pin_deletion_'.$pin->getId(), $request->request->get('csrf_token')))
         {
             $em->remove($pin);
             $em->flush();
-
         }
 
         return $this->redirectToRoute('all_pins');
-
     }
 
 }
