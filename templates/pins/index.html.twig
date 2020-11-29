@@ -3,11 +3,13 @@
 {% block title 'Best Pins On Earth | ' ~ parent() %}
 
 {% block body %}
-    <h1>{{pluralize(pins|length, 'Pin', 'Pinus')}}</h1>
+    <h1>{{pluralize(pins|length, 'Pin')}}</h1>
     <article>
         {% for pin in pins %}
-            <h2>{{pin.title}}</h2>
-            <p>{{pin.description}}</p>
+        <h2>
+            <a href=" {{path('show_pin', {id : pin.id} ) }} ">{{pin.title}}</a>
+        </h2>
+        <p>{{pin.description}}</p>
         {% endfor %}
     </article>
 {% endblock %}

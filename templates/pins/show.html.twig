@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title 'Pin | ' ~ parent() %}
+
+{% block body %}
+    <h1>{{pluralize(pins|length, 'Pin')}}</h1>
+    <article>
+        {% for pin in pins %}
+            <h2>{{pin.title}}</h2>
+            <p>{{pin.description}}</p>
+        {% endfor %}
+    </article>
+    <article>
+        <h3>
+            <a href=" {{path('home')}} ">Go Back</a>
+        </h3>
+    </article>
+{% endblock %}
