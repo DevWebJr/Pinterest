@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title 'Edit Pin #' ~ pin.id ~ " | " ~ parent() %}
+
+{% block body %}
+    <h1>Edit Pin #{{ pin.id }}</h1>
+    <article>
+        <h3>
+            <a href=" {{path('home')}} ">Home</a>
+        </h3>
+    </article>
+    <h1>Add a new Pin</h1>
+    <article>
+        {{form_start(form)}}
+            {{form_widget(form)}}
+            <input type="submit" value="Update Pin">
+        {{form_end(form)}}
+    </article>
+{% endblock %}

@@ -3,16 +3,16 @@
 {% block title 'Pin | ' ~ parent() %}
 
 {% block body %}
-    <h1>{{pluralize(pins|length, 'Pin')}}</h1>
-    <article>
-        {% for pin in pins %}
-            <h2>{{pin.title}}</h2>
-            <p>{{pin.description}}</p>
-        {% endfor %}
-    </article>
     <article>
         <h3>
-            <a href=" {{path('home')}} ">Go Back</a>
+            <a href=" {{path('home')}} ">Home</a>
         </h3>
+        <h3>
+            <a href=" {{path('edit_pin', {id: pin.id})}} ">Edit</a>
+        </h3>
+    </article>
+    <h1>{{pin.title}}</h1>
+    <article>
+            <p>{{pin.description}}</p>
     </article>
 {% endblock %}
