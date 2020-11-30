@@ -8,10 +8,11 @@
         {% endblock %}
     </head>
     <body>
-        {% include "header.html.twig" %}
+        {% include "layouts/header.html.twig" %}
+        {% include "layouts/partials/_flash_messages.html.twig" %}
         {% block body %}
         {% endblock %}
-        {% include "footer.html.twig" %}
+        {% include "layouts/footer.html.twig" %}
         {% block javascripts %}
         <script src="{{asset('./js/script.js')}} "></script>
         {% endblock %}

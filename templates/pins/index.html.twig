@@ -1,15 +1,13 @@
-{% extends 'base.html.twig' %}
+{% extends 'layouts/base.html.twig' %}
 
 {% block title 'Best Pins On Earth | ' ~ parent() %}
 
 {% block body %}
-    <h1>Pinterest</h1>
+    <h1><a href=" {{path('home')}} " title="home">Pinterest</a></h1>
     <article>
-        <h2>
-            <a href=" {{path('all_pins')}} ">Show All Pins</a>
-        </h2>
-        <h2>
-            <a href=" {{path('create_pin')}} ">Add Pin</a>
-        </h2>
+        <h3>
+            <a href=" {{path('create_pin')}} ">Add</a> | 
+            <a href=" {{path('all_pins')}} ">Show</a>
+        </h3>
     </article>
 {% endblock %}

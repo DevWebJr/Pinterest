@@ -1,14 +1,12 @@
-{% extends 'base.html.twig' %}
+{% extends 'layouts/base.html.twig' %}
 
 {% block title 'Create Pin | ' ~ parent() %}
 
 {% block body %}
+    <h1><a href=" {{path('home')}} " title="home">Pinterest</a></h1>
     <article>
-        <h3>
-            <a href=" {{path('home')}} ">Home</a>
-        </h3>
+        <h3>Add a new Pin</h3>
     </article>
-    <h1>Add a new Pin</h1>
     <article>
         {{ include('pins/_form.html.twig') }}
     </article>

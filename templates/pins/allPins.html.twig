@@ -1,14 +1,14 @@
-{% extends 'base.html.twig' %}
+{% extends 'layouts/base.html.twig' %}
 
 {% block title 'All Pins | ' ~ parent() %}
 
 {% block body %}
+    <h1><a href=" {{path('home')}} " title="home">Pinterest</a> - | - [{{pluralize(pins|length, 'Pin')}}]</h1>
     <article>
         <h3>
-            <a href=" {{path('home')}} ">Home</a>
+            <a href=" {{path('create_pin')}} ">Add</a>
         </h3>
     </article>
-    <h1>{{pluralize(pins|length, 'Pin')}}</h1>
     <article>
         {% for pin in pins %}
         <h2>
