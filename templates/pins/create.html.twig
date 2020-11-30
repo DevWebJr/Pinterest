@@ -3,11 +3,10 @@
 {% block title 'Create Pin | ' ~ parent() %}
 
 {% block body %}
-    <h1><a href=" {{path('home')}} " title="home">Pinterest</a></h1>
-    <article>
+<div class="row">
+    <div class="col-md-6 mx-auto">
         <h3>Add a new Pin</h3>
-    </article>
-    <article>
         {{ include('pins/_form.html.twig') }}
-    </article>
+    </div>
+</div>
 {% endblock %}

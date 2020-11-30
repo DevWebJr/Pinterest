@@ -3,11 +3,10 @@
 {% block title 'Edit Pin #' ~ pin.id ~ " | " ~ parent() %}
 
 {% block body %}
-    <h1><a href=" {{path('home')}} " title="home">Pinterest</a></h1>
-    <article>
+<div class="row">
+    <div class="col-md-6 mx-auto">
         <h3>Edit a new Pin</h3>
-    </article>
-    <article>
         {{ include('pins/_form.html.twig', {'submitButtonText':'Update'}) }}
-    </article>
+    </div>
+</div>
 {% endblock %}
