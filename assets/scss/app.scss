@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+@import 'shared/variables';
+
+@import '~bootstrap/scss/bootstrap';
+
+body {
+    background-color: lightgray;
+    font-family: $primary-font, sans-serif;
+}
+
+.alert{
+    padding: 10px;
+    color: white;
+    text-align: center;
+    margin: 0;
+    border-radius: 0;
+    border: none;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+    
+    &.alert-info{
+        background-color: blue;
+    }
+    
+    &.alert-success{
+        background-color: green;
+    }
+    
+    &.alert-warning{
+        background-color: orange;
+    }
+    
+    &.alert-error{
+        background-color: red;
+    }
+}
