@@ -5,10 +5,25 @@
 @import '~bootstrap/scss/bootstrap';
 
 body {
-    background-color: lightgray;
+    background-color: $custom-bc;
     font-family: $primary-font, sans-serif;
+    margin: 0;
+    padding: 0;
 }
-
+.down-bar{
+    border-bottom: solid #AAAAAA 2px;
+}
+.custom-color{
+    color:$custom-color;
+}
+.custom-border{
+    border:$custom-border;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+}
 .alert{
     padding: 10px;
     color: white;

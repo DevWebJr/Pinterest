@@ -3,10 +3,14 @@
 {% block title 'Best Pins On Earth | ' ~ parent() %}
 
 {% block body %}
-    <article>
-        <h3>
-            <a href=" {{path('create_pin')}} ">Add</a> | 
-            <a href=" {{path('all_pins')}} ">Show</a>
-        </h3>
-    </article>
+    <div class="jumbotron bg-dark custom-border text-center">
+        <h1 class="display-3">Hello world</h1>
+        <hr class="my-4">
+        <p class="lead">Welcome to the amazing website clone of Pinterest.</p>
+        <hr class="my-4">
+        <p>It uses Symfony and components of this famous framework.</p>
+        <p class="lead">
+          <a class="btn btn-secondary btn-lg" href="{{path('all_pins')}}" role="button">Show All Pins</a>
+        </p>
+      </div>
 {% endblock %}
